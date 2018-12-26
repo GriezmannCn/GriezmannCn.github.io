@@ -1,0 +1,362 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-12-24 17:46:50
+ * @version $Id$
+ */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+ul,
+ol,
+input {
+    margin: 0;
+    padding: 0
+}
+
+em,
+i {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+a,
+a:hover {
+    text-decoration: none
+}
+
+img {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+label {
+    cursor: default
+}
+
+textarea {
+    resize: none
+}
+
+a,
+a:focus {
+    outline: none
+}
+
+.clearfix:after {
+    content: '\20';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.clear {
+    display: block;
+    height: 0;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden
+}
+
+.fl {
+    float: left;
+    display: inline
+}
+
+.fr {
+    float: right;
+    display: inline
+}
+
+.fn {
+    float: none
+}
+
+.tl {
+    text-align: left
+}
+
+.tr {
+    text-align: right
+}
+
+.tc {
+    text-align: center
+}
+
+.hide {
+    display: none
+}
+
+.show {
+    display: block
+}
+
+.mt10 {
+    margin-top: 10px
+}
+
+.noBg {
+    background: none !important
+}
+
+.noBorder {
+    border: 0 !important
+}
+
+.red {
+    color: red
+}
+
+.mb15 {
+    margin-bottom: 15px
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5 Tahoma, Arial, 'Hiragino Sans GB', 'microsoft yahei', \5b8b\4f53
+}
+
+body {
+    background: #ccc;
+    width: 100%;
+    font-family: 'indie Flower', cursive;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+}
+
+/*a:hover{color:#f6dbd0;}*/
+img {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper ul {
+    width: 420px;
+}
+
+.wrapper li {
+    width: 200px;
+    height: 200px;
+    float: left;
+    cursor: pointer;
+    margin: 5px;
+    position: relative;
+    perspective: 2000px;
+}
+
+.wrapper li .picBox,
+.wrapper li .show,
+.wrapper li .txt {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.wrapper li .picBox img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.wrapper li .picBox {
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% -100px;
+    animation: 0.5s 0s 1 normal forwards;
+}
+
+.wrapper li .txt {
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+    line-height: 200px;
+    font-size: 25px;
+    transform: translate3d(0, 0, -1px);
+}
+
+
+.wrapper li.outTop .txt,
+.wrapper li.inTop .txt {
+    transform-origin: bottom;
+    transform: translateY(-100%) rotateX(90deg);
+}
+
+.wrapper li.inTop .picBox {
+    animation-name: inTop;
+}
+
+.wrapper li.outTop .picBox {
+    animation-name: outTop;
+}
+
+@keyframes inTop {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotateX(-90deg);
+    }
+}
+
+@keyframes outTop {
+
+    from {
+        transform: rotateX(-90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+.wrapper li.outRight .txt,
+.wrapper li.inRight .txt {
+    transform-origin: left;
+    transform: translateX(100%) rotateY(90deg);
+}
+
+.wrapper li.inRight .picBox {
+    animation-name: inRight;
+}
+
+.wrapper li.outRight .picBox {
+    animation-name: outRight;
+}
+
+@keyframes inRight {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotateY(-90deg);
+    }
+}
+
+@keyframes outRight {
+
+    from {
+        transform: rotateY(-90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+.wrapper li.outBottom .txt,
+.wrapper li.inBottom .txt {
+    transform-origin: top;
+    transform: translateY(100%) rotateX(-90deg);
+}
+
+.wrapper li.inBottom .picBox {
+    animation-name: inBottom;
+}
+
+.wrapper li.outBottom .picBox {
+    animation-name: outBottom;
+}
+
+@keyframes inBottom {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotateX(90deg);
+    }
+}
+
+@keyframes outBottom {
+
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+.wrapper li.outLeft .txt,
+.wrapper li.inLeft .txt {
+    transform-origin: right;
+    transform: translateX(-100%) rotateY(-90deg);
+}
+
+.wrapper li.inLeft .picBox {
+    animation-name: inLeft;
+}
+
+.wrapper li.outLeft .picBox {
+    animation-name: outLeft;
+}
+
+@keyframes inLeft {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotateY(90deg);
+    }
+}
+
+@keyframes outLeft {
+
+    from {
+        transform: rotateY(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
